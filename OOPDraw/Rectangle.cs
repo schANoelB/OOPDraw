@@ -34,15 +34,15 @@ namespace OOPDraw
         {
             int x = Math.Min(X1, X2);
             int y = Math.Min(Y1, Y2);
-            int w = Math.Min(X1, X2) - x;
-            int h = Math.Min(Y1, Y2) - y;
+            int w = Math.Max(X1, X2) - x;
+            int h = Math.Max(Y1, Y2) - y;
             g.DrawRectangle(Pen, x, y, w, h);
         }
 
         public void GrowTo(int x2, int y2)
         {
             X2 = x2;
-            Y2 = Y2;
+            Y2 = y2;
         }
     }
 }

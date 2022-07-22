@@ -32,6 +32,7 @@ namespace OOPDraw
             {
                 line.Draw(gr);
             }
+            Rectangle rect = new Rectangle(currentPen, 50, 150, 250, 450); rect.Draw(gr);
         }
 
         private void Canvas_MouseDown(object sender, MouseEventArgs e)

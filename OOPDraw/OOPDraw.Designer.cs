@@ -40,9 +40,9 @@ namespace OOPDraw
             // Canvas
             // 
             this.Canvas.BackColor = System.Drawing.SystemColors.Window;
-            this.Canvas.Location = new System.Drawing.Point(300, 17);
+            this.Canvas.Location = new System.Drawing.Point(287, 17);
             this.Canvas.Name = "Canvas";
-            this.Canvas.Size = new System.Drawing.Size(929, 439);
+            this.Canvas.Size = new System.Drawing.Size(1076, 656);
             this.Canvas.TabIndex = 0;
             this.Canvas.TabStop = false;
             this.Canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
@@ -98,7 +98,7 @@ namespace OOPDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 468);
+            this.ClientSize = new System.Drawing.Size(1375, 685);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Colour);
             this.Controls.Add(this.label1);
