@@ -16,37 +16,49 @@ namespace OOPDraw
         {
             InitializeComponent();
             DoubleBuffered = true; //Stops image flickering
+            LineWidth.SelectedItem = "Medium";
+            Colour.SelectedItem = "Green";
+            Shape.SelectedItem = "Line";
         }
 
         Pen currentPen = new Pen(Color.Black);
         bool dragging = false;
         Point startOfDrag = Point.Empty;
         Point lastMousePosition = Point.Empty;
-        List<Line> lines = new List<Line>();
+        List<Object> shapes = new List<Object>();
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics gr = e.Graphics;
             
-            foreach (Line line in lines)
+            foreach (dynamic shape in shapes)
             {
-                line.Draw(gr);
+                shape.Draw(gr);
             }
-            Rectangle rect = new Rectangle(currentPen, 50, 150, 250, 450); rect.Draw(gr);
         }
 
         private void Canvas_MouseDown(object sender, MouseEventArgs e)
+
         {
-            dragging = true; startOfDrag = lastMousePosition = e.Location;
-            lines.Add(new Line(currentPen, e.X, e.Y));
+            dragging = true;
+            startOfDrag = lastMousePosition = e.Location;
+            switch (Shape.Text)
+            {
+                case "Line":
+                    shapes.Add(new Line(currentPen, e.X, e.Y));
+                    break;
+                case "Rectangle":
+                    shapes.Add(new Rectangle(currentPen, e.X, e.Y));
+                    break;
+            }
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging) 
             {
-                Line currentLine = lines.Last();
-                currentLine.GrowTo(e.X, e.Y);
+                dynamic shape = shapes.Last();
+                shape.GrowTo(e.X, e.Y);
                 lastMousePosition = e.Location; 
                 Refresh(); 
             }
