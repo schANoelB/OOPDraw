@@ -27,7 +27,7 @@ namespace OOPDraw
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics gr = e.Graphics;
-
+            
             foreach (Line line in lines)
             {
                 line.Draw(gr);
