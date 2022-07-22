@@ -61,7 +61,7 @@ namespace OOPDraw
             this.LineWidth.Name = "LineWidth";
             this.LineWidth.Size = new System.Drawing.Size(121, 23);
             this.LineWidth.TabIndex = 1;
-            this.LineWidth.SelectedIndexChanged += new System.EventHandler(this.LineWIdth_SelectedIndexChanged);
+            this.LineWidth.SelectedIndexChanged += new System.EventHandler(this.LineWidth_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -71,7 +71,6 @@ namespace OOPDraw
             this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Line Width";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Colour
             // 

@@ -74,11 +74,6 @@ namespace OOPDraw
             currentPen = new Pen(currentPen.Color, width);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Colour_SelectedIndexChanged(object sender, EventArgs e)
         {
             Color colour = currentPen.Color;
