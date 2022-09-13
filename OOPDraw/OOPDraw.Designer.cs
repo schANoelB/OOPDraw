@@ -110,11 +110,14 @@ namespace OOPDraw
             this.Shape.FormattingEnabled = true;
             this.Shape.Items.AddRange(new object[] {
             "Line",
-            "Rectangle"});
+            "Rectangle",
+            "Ellipse",
+            "Circle"});
             this.Shape.Location = new System.Drawing.Point(12, 99);
             this.Shape.Name = "Shape";
             this.Shape.Size = new System.Drawing.Size(121, 23);
             this.Shape.TabIndex = 6;
+            this.Shape.SelectedIndexChanged += new System.EventHandler(this.Shape_SelectedIndexChanged);
             // 
             // OOPDraw
             // 
