@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace OOPDraw
 {
-    class Rectangle
+    class Rectangle : Shape
     {
         public Pen Pen { get; private set; }
 
@@ -30,7 +30,7 @@ namespace OOPDraw
         {
         }
 
-        public void Draw(Graphics g)
+        public override void Draw(Graphics g)
         {
             int x = Math.Min(X1, X2);
             int y = Math.Min(Y1, Y2);
@@ -39,7 +39,7 @@ namespace OOPDraw
             g.DrawRectangle(Pen, x, y, w, h);
         }
 
-        public void GrowTo(int x2, int y2)
+        public override void GrowTo(int x2, int y2)
         {
             X2 = x2;
             Y2 = y2;
