@@ -7,7 +7,7 @@ namespace OOPDraw
 {
     public abstract class Shape
     {
-        protected Pen Pen { get; set; }
+        protected internal Pen Pen { get; set; }
 
         protected int X1 { get; set; }
 
@@ -47,22 +47,12 @@ namespace OOPDraw
             return (x, y, w, h);
         }
 
-        public (int, int, int, int) EnclosingCircle()
+        public void MoveBy(int xDelta, int yDelta)
         {
-            int x = Math.Min(X1, X2);
-            int y = Math.Min(Y1, Y2);
-            int w = Math.Max(X1, X2) - x;
-            int h = Math.Max(Y1, Y2) - y;
-            return (x, y, w, h);
-        }
-
-        public (int, int, int, int) EnclosingEllipse()
-        {
-            int x = Math.Min(X1, X2);
-            int y = Math.Min(Y1, Y2);
-            int w = Math.Max(X1, X2) - x;
-            int h = Math.Max(Y1, Y2) - y;
-            return (x, y, w, h);
+            X1 += xDelta;
+            Y1 += yDelta;
+            X2 += xDelta;
+            Y2 += yDelta;
         }
     }
 }
